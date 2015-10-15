@@ -1,13 +1,5 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
-  // debugger;
-  this.identity = 'blinky  dancer'
-
-// this.step = function () {
-//   this.oldStep();
-  
-//   this.$node.toggle();
-// };
 
   this.step();
 };

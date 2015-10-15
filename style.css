@@ -1,0 +1,8 @@
+.character {
+  position: absolute;
+  color: green;
+}
+
+:root {
+  background-color: darkgrey;
+}

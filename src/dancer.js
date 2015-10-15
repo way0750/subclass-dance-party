@@ -4,7 +4,9 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
   this.$node = $('<span class="dancer"></span>');
-  this.identity = 'generic dance'
+  this.c = this.generator(0,255);
+
+  this.$node.text(this.c);
 
   this.setPosition(top, left);
 };
@@ -21,3 +23,13 @@ makeDancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+makeDancer.prototype.generator = function(min, max) {
+  // String.fromCharCode();
+  // 33 - 126 are normal characters
+
+  var randNum = Math.floor(Math.random() * (max + 1 - min)) + min;
+  var character = String.fromCharCode(randNum);
+
+  return character;
+}
