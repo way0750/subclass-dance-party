@@ -1,10 +1,18 @@
 $(document).ready(function() {
-  window.dancers = [];
+  window.dancers = ['falling', 'growing', 'makeBlinky'];
 
+  $(':root').keypress(function (event) {
+    var dancerName = '' + window.dancers[Math.floor(Math.random() * window.dancers.length)] + 'Dancer';
+    var dancerType = window[dancerName];
 
-  
+    var dancer = new dancerType(
+      $(window).height() * Math.random(),
+      $(window).width() * Math.random(),
+      Math.random() * 1000
+    );
+    $('body').append(dancer.$node);
 
-
+  })
 
   $(".addDancerButton").on("click", function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -34,4 +42,6 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
   });
+
+  $('.goSharks').on('click', goSharks);
 });       

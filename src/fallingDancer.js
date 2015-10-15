@@ -1,5 +1,6 @@
 function fallingDancer(top, left, timeBetweenSteps) {
   makeDancer.call(this, 0, left, (100 * Math.random()));
+  this.$node.addClass('falling');
   this.yPos = 0;
   // this.xPos = left;
 
@@ -13,6 +14,7 @@ fallingDancer.prototype.step = function () {
   this.$node.css({top: this.yPos, left: this.xPos});
   this.yPos += 5;
   if(this.yPos > $(window).height()) {
-    this.$node.remove();
+    this.yPos = 0;
+    this
   }
 };
